@@ -153,7 +153,7 @@ class insertDataFront {
     returnList(){
         const tableItems = document.getElementById('update')
         tableItems.innerHTML = `<div class="row row-cols-1 row-cols-md-3 g-4" id="dataImages"></div>`
-        this.buildCards('dataImages', productos, 12)
+        this.buildCards('dataImages', productos)
     }
 
     updateSpace() {
