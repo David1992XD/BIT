@@ -35,7 +35,6 @@ class dataPrices {
         this.totalPrice -= price
         return this.totalPrice
     }
-
 }
 
 
@@ -93,8 +92,6 @@ class insertDataFront {
         this.arrayProducts = []
     }
 
-
-
     setTotal = (price) => {
         const total = document.getElementById('total')
         this.data.setTotalPrice(price)
@@ -117,8 +114,6 @@ class insertDataFront {
         }
     }
 
-
-
     setPrice = (name) => {
         const pos = this.arrayProducts.name.indexOf(name)
         this.setTotal(this.arrayProducts.price[pos])
@@ -126,11 +121,10 @@ class insertDataFront {
         this.setLista()
     }
 
-
-    buildCards = (id, arrayProd, lenght) => {
+    buildCards = (id, arrayProd) => {
         this.arrayProducts = arrayProd
         const cards = document.getElementById(id)
-        for (let i = 0; i < lenght; i++) {
+        for (let i = 0; i < this.arrayProducts.price.length; i++) {
             cards.innerHTML += (
                 `
                         <div class="card border-secondary mx-2 w-25">
@@ -209,7 +203,6 @@ class insertDataFront {
         }
     }
 
-
     payment(){
         alertOK('Ya pagaste','OK')
         this.payItem.dropAll()
@@ -220,8 +213,6 @@ class insertDataFront {
 
 
 }
-
-
 
 alertOK = (message, tipe) => {
     switch (tipe) {
@@ -246,12 +237,7 @@ alertOK = (message, tipe) => {
     }
 }
 
-
-
-
-
 const dataFront = new insertDataFront
-const pay = new payItems
 
 const productos = {
     name: ["Gaseosa", "Cerveza", "Carnes Res", "Carnes Cerdo", "Carnes Pez", "Pasta", "Salsa Tomate", "Salsa Blanca", "Sal", "Azucar", "Pimienta", "Granos"],
@@ -260,12 +246,4 @@ const productos = {
     path: ["Img_prod_1.jpg", "Img_prod_2.jpg", "Img_prod_3.jpg", "Img_prod_4.jpg", "Img_prod_5.jpg", "Img_prod_6.jpg", "Img_prod_7.jpg", "Img_prod_8.jpg", "Img_prod_9.jpg", "Img_prod_10.jpg", "Img_prod_11.jpg", "Img_prod_12.jpg"],
 }
 
-
-
-
-dataFront.buildCards('dataImages', productos, 12)
-
-
-
-
-
+dataFront.buildCards('dataImages', productos)
